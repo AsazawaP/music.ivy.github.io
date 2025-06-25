@@ -117,45 +117,48 @@ header {
 
 .genre-cards {
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  padding: 3rem;
 }
 
 .genre-card {
-  background: rgba(0, 0, 0, 0.5); /* 半透明な黒背景 */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1rem;
-  width: 300px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  color: #fff; /* テキスト白に */
-  transition: transform 0.2s;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  width: 360px; /* ★カード幅を大きく */
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(128, 0, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .genre-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(128, 0, 255, 0.6);
 }
 
 .genre-card img {
   width: 100%;
-  border-radius: 8px;
+  height: 220px; /* ★画像を少し大きく */
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .genre-card h3 {
-  margin: 1rem 0 0.5rem;
-  color: #7ecfff; /* 明るい紫 */
-  text-shadow: 0 0 10px #9a5eff, 0 0 20px #bb86fc;
-  animation: glow 3s infinite ease-in-out;
-  font-weight: bold;
+  font-size: 1.6rem; /* ★タイトルを大きく */
+  margin-bottom: 0.8rem;
+  color: #fff;
 }
-
 
 .genre-card p {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem; /* ★説明文も拡大 */
+  color: #f5f5ff;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
+
 
 .genre-card a {
   text-decoration: none;
@@ -186,27 +189,24 @@ footer {
   }
 }
 /* 共通リンクボタンスタイル */
-a.glow-button {
+.glow-button {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  color: #c084fc;
-  border: 1px solid #c084fc;
-  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  background: #7b42f6;
+  color: white;
+  font-size: 1rem;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
-  background: transparent;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 5px #bb86fc;
-  box-shadow: 0 0 10px #9a5eff;
-  animation: glow 3s infinite ease-in-out;
+  box-shadow: 0 0 12px #b57aff;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-a.glow-button:hover {
-  background: #7e57ff;
-  color: #fff;
-  box-shadow: 0 0 15px #c084fc, 0 0 25px #c084fc;
-  text-shadow: 0 0 10px #fff;
+.glow-button:hover {
+  background: #9c65ff;
+  box-shadow: 0 0 18px #d8b4fe;
 }
+
 
  /* ジャンル詳細ページ用セクション */
 .genre-section {
@@ -248,10 +248,15 @@ a.glow-button:hover {
 }
 
 .music-card p {
-  font-size: 0.95rem;
+  font-size: 1rem;              /* 標準的な文字サイズ */
+  line-height: 1.6;             /* 行間で読みやすく */
+  color: #e0e0ff;               /* 白すぎない淡い紫が夜背景に合う */
+  text-align: left;            /* 左寄せで読みやすい（中央も可） */
+  padding: 0 1rem;             /* 横に余白 */
   margin-top: 0.5rem;
-  color: #e0e0e0;
+  text-shadow: 0 0 4px #7e57ff; /* ほんのり光らせて */
 }
+
 
 .music-card iframe {
   border-radius: 8px;
@@ -269,4 +274,23 @@ a.glow-button:hover {
     width: 90%;
   }
 }
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px; /* 最大幅を調整：必要に応じて変更 */
+  margin: 1rem auto;
+  padding-top: 56.25%; /* アスペクト比 16:9 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #9a5eff;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 
